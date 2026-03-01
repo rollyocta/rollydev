@@ -1,34 +1,41 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import NavBar from './pages/NavBar.jsx'
+import Home from './pages/Home.jsx'
+import Skills from './pages/Skills.jsx'
+import PortfolioGrid from './pages/PortfolioGrid.jsx'
+import Contact from './pages/Contact.jsx'
+import Footer from './pages/Footer.jsx'
+
+import {   
+  Layers, 
+  Monitor, 
+  Cpu, 
+  Layout,
+} from 'lucide-react';
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="min-h-screen bg-[#0F172A] text-slate-200 font-sans selection:bg-cyan-500/30 overflow-x-hidden">
+      <NavBar scrolled={scrolled} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <Home />
+      <Skills/>
+      <PortfolioGrid />
+      <Contact />
+      <Footer />
+    </div>
   )
 }
 
