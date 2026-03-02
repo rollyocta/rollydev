@@ -12,7 +12,7 @@ const PortfolioGrid = () => {
       id: 1,
       title: "Landing Page Design for Bright Smile Dental Clinic",
       category: "design",
-      image: "/public/projects/dentalClinic.png",
+      image: "/projects/dentalClinic.png",
       description: "Tools: Figma | Focused on clean layout, brand colors, and conversion",
       link: "https://www.figma.com/proto/Oq9szHBaRLSrALAV0jMYUD/Smart-Menu-Ordering-system?node-id=4-8"
     },
@@ -20,7 +20,7 @@ const PortfolioGrid = () => {
       id: 2,
       title: "Smart Menu: Ordering System",
       category: "dev",
-      image: "/public/projects/smartMenu.png",
+      image: "/projects/smartMenu.png",
       description: "A responsive web-based smart menu system designed to streamline ordering and improve customer experience.",
       link: "#"
     },

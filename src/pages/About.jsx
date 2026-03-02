@@ -17,7 +17,7 @@ const About = () => {
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl blur opacity-25 group-hover:opacity-40 transition-opacity" />
               <img 
-                src="/public/rollyAbout.png" 
+                src="/rollyAbout.png" 
                 alt="Profile" 
                 className="relative rounded-2xl w-full aspect-square object-cover border border-slate-700"
               />
