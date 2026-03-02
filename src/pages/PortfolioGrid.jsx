@@ -10,31 +10,35 @@ const PortfolioGrid = () => {
     const projects = [
     {
       id: 1,
-      title: "Brand Identity: Nova",
+      title: "Landing Page Design for Bright Smile Dental Clinic",
       category: "design",
-      image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=800",
-      description: "Logo at brand guidelines para sa isang tech startup."
+      image: "/public/projects/dentalClinic.png",
+      description: "Tools: Figma | Focused on clean layout, brand colors, and conversion",
+      link: "https://www.figma.com/proto/Oq9szHBaRLSrALAV0jMYUD/Smart-Menu-Ordering-system?node-id=4-8"
     },
     {
       id: 2,
-      title: "E-Commerce Platform",
+      title: "Smart Menu: Ordering System",
       category: "dev",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
-      description: "Full-stack web app gamit ang React at Node.js."
+      image: "/public/projects/smartMenu.png",
+      description: "A responsive web-based smart menu system designed to streamline ordering and improve customer experience.",
+      link: "#"
     },
     {
       id: 3,
       title: "UI/UX: Travel App",
       category: "design",
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=800",
-      description: "Mobile application interface design para sa mga biyahero."
+      description: "Mobile application interface design para sa mga biyahero.",
+      link: "#"
     },
     {
       id: 4,
       title: "Dashboard System",
       category: "dev",
       image: "https://images.unsplash.com/photo-1551288049-bbbda546697c?auto=format&fit=crop&q=80&w=800",
-      description: "Interactive data visualization dashboard."
+      description: "Interactive data visualization dashboard.",
+      link: "#"
     }
   ];
 
@@ -83,9 +87,9 @@ const PortfolioGrid = () => {
                     <h3 className="text-xl font-bold text-white">{project.title}</h3>
                     <p className="text-slate-400 text-sm mt-2">{project.description}</p>
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white group-hover:bg-cyan-500 group-hover:text-[#0F172A] transition-colors">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white group-hover:bg-cyan-500 group-hover:text-[#0F172A] transition-colors">
                     <ExternalLink size={20} />
-                  </div>
+                  </a>
                 </div>
               </div>
             ))}

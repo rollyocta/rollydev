@@ -9,11 +9,11 @@ const NavBar = ({ scrolled, isMenuOpen, setIsMenuOpen }) => {
       <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-[#0F172A]/90 backdrop-blur-md py-4 shadow-xl' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="text-2xl font-black tracking-tighter text-white group cursor-pointer">
-            ART<span className="text-cyan-400 group-hover:animate-pulse transition-all">CODE</span>
+            ROLLY<span className="text-cyan-400 group-hover:animate-pulse transition-all">DEV</span>
           </div>
           
           <div className="hidden md:flex space-x-8 items-center">
-            {['Home', 'About', 'Works'].map((item) => (
+            {['Home', 'About', 'Works', 'Services'].map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`} className="relative hover:text-cyan-400 transition-colors group">
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
