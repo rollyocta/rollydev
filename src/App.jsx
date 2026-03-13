@@ -8,6 +8,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Services from './pages/Services.jsx'
 import PortfolioGrid from './pages/PortfolioGrid.jsx'
+import Certificates from './pages/Certificates.jsx'
 import Contact from './pages/Contact.jsx'
 import Footer from './pages/Footer.jsx'
 
@@ -35,6 +36,7 @@ function App() {
       <About />
       <PortfolioGrid />
       <Services />
+      <Certificates />
       <Contact />
       <Footer />
     </div>
