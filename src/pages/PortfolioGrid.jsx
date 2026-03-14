@@ -99,18 +99,18 @@ const PortfolioGrid = () => {
             </p>
           </div>
 
-          {/* Premium Tab Switcher */}
-          <div className="flex p-1.5 bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 shadow-2xl">
+          {/* Premium Tab Switcher - Responsive Update */}
+          <div className="flex flex-wrap md:flex-nowrap p-1.5 bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 shadow-2xl w-full md:w-auto">
             {[
               { id: 'all', label: 'All' },
               { id: 'design', label: 'Design' },
-              { id: 'dev', label: 'Development' },
+              { id: 'dev', label: 'System' },
               { id: 'content', label: 'Content' }
             ].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative px-6 py-2.5 rounded-xl transition-all duration-300 text-sm font-semibold tracking-wide ${
+                className={`relative flex-1 md:flex-none px-4 md:px-8 py-2.5 rounded-xl transition-all duration-300 text-xs md:text-sm font-semibold tracking-wide ${
                   activeTab === tab.id 
                   ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/20' 
                   : 'text-slate-400 hover:text-white'
