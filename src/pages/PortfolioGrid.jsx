@@ -102,7 +102,7 @@ const PortfolioGrid = () => {
           {/* Premium Tab Switcher */}
           <div className="flex p-1.5 bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 shadow-2xl">
             {[
-              { id: 'all', label: 'All Projects' },
+              { id: 'all', label: 'All' },
               { id: 'design', label: 'Design' },
               { id: 'dev', label: 'Development' },
               { id: 'content', label: 'Content' }
