@@ -1,25 +1,24 @@
 import React from 'react';
-import { ExternalLink, Cloud, Palette, ShieldCheck, Award, Eye } from 'lucide-react';
+import { ExternalLink, Cloud, Palette, ShieldCheck, Award, Eye, Calendar, Verified } from 'lucide-react';
 
 const Certificates = () => {
   const certs = [
     {
-      title: "Cloud and Dev Ops Certification",
+      title: "Cloud & DevOps Engineering",
       issuer: "DICT",
       date: "2025",
       link: "https://drive.google.com/drive/folders/1UgReQZSG5xG3OeKJcMe3wwY91PZWHCOh",
-      // Siguraduhing tama ang path ng image preview mo
       image: "/certificates/cloud.png", 
-      color: "from-cyan-950/40 via-cyan-900/60 to-cyan-950/80", // Darker colored gradient
+      accent: "from-cyan-500/20 to-blue-500/20",
       icon: <Cloud className="text-cyan-400" size={24} />
     },
     {
-      title: "Advanced Graphic Design Specialization",
+      title: "Advanced Graphic Design",
       issuer: "Udemy",
       date: "2023",
       link: "#",
       image: "/certs/udemy_design.jpg", 
-      color: "from-purple-950/40 via-purple-900/60 to-purple-950/80", // Darker colored gradient
+      accent: "from-purple-500/20 to-indigo-500/20",
       icon: <Palette className="text-purple-400" size={24} />
     },
     {
@@ -28,91 +27,93 @@ const Certificates = () => {
       date: "2023",
       link: "#",
       image: "/certs/google_ux.jpg", 
-      color: "from-emerald-950/40 via-emerald-900/60 to-emerald-950/80", // Darker colored gradient
+      accent: "from-emerald-500/20 to-teal-500/20",
       icon: <ShieldCheck className="text-emerald-400" size={24} />
     }
   ];
 
   return (
-    <section id="certificates" className="relative py-24 px-6 bg-[#0F172A] overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none" />
+    <section id="certificates" className="relative py-32 px-6 bg-[#020617] overflow-hidden">
+      {/* Background Architectural Element */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-16 border-b border-slate-800 pb-8">
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20 border-b border-slate-800/50 pb-12">
           <div className="space-y-4">
-            <div className="flex items-center gap-2 text-cyan-400 font-mono text-sm tracking-widest uppercase">
-              <Award size={16} />
-              <span>Achievements</span>
+            <div className="flex items-center gap-2 text-cyan-400 font-bold text-xs tracking-[0.2em] uppercase">
+              <Award size={16} className="text-cyan-500" />
+              <span>Professional Credentials</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-              Certifications
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-none">
+              Academic & Tech <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-500">Endorsements</span>
             </h2>
           </div>
-          <div className="text-slate-500 font-medium md:text-right max-w-sm">
-            A glimpse into my professional certifications and continuous learning journey.
-          </div>
+          <p className="text-slate-400 font-medium md:text-right max-w-xs leading-relaxed">
+            Validation of specialized technical expertise and creative proficiency from industry leaders.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Grid Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {certs.map((cert, index) => (
             <div 
               key={index}
-              className="group relative h-[380px] rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/10 border border-slate-800/50 hover:border-cyan-500/30"
+              className="group relative h-[420px] rounded-[2.5rem] overflow-hidden transition-all duration-700 hover:-translate-y-3 bg-slate-900/40 border border-slate-800/50 hover:border-cyan-500/30"
             >
-              {/* Certificate Image - "Silip" Background - ADDED OPACITY FILTER */}
+              {/* Background Image Layer */}
               <div 
-                className="absolute inset-0 bg-cover bg-center transition-all duration-700 group-hover:scale-110 brightness-[0.4] group-hover:brightness-[0.6]"
-                style={{ backgroundImage: `url(${cert.image})` }} // Dynamic background image
+                className="absolute inset-0 bg-cover bg-center transition-all duration-1000 group-hover:scale-110 opacity-30 group-hover:opacity-40 grayscale group-hover:grayscale-0"
+                style={{ backgroundImage: `url(${cert.image})` }} 
               />
               
-              {/* FIXED: Darker & More Precise Gradient Overlays for Readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/70 to-transparent group-hover:via-[#0F172A]/80 transition-colors" />
+              {/* Refined Gradient Overlay for Readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/80 to-[#020617]/20 transition-all duration-500" />
+              <div className={`absolute inset-0 bg-gradient-to-br ${cert.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
 
-              {/* Glassmorphism/Color Glow Layer - ADDED BACKDROP-BLUR FOR DEPTH */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${cert.color} backdrop-blur-[2px] opacity-70 group-hover:opacity-100 transition-opacity duration-500`} />
-
-              {/* Content Container - FIXED Z-INDEX & PADDING */}
-              <div className="relative z-30 flex flex-col h-full p-8">
-                <div className="flex justify-between items-start mb-auto">
-                  <div className="p-4 bg-slate-900/80 rounded-2xl border border-slate-700/50 shadow-xl group-hover:scale-110 group-hover:bg-slate-800 transition-transform duration-500">
+              {/* Main Content */}
+              <div className="relative z-30 flex flex-col h-full p-10">
+                <div className="flex justify-between items-start">
+                  <div className="p-4 bg-slate-900/90 backdrop-blur-xl rounded-2xl border border-slate-700/50 group-hover:border-white/20 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-cyan-500/10">
                     {cert.icon}
                   </div>
-                  <div className="flex items-center gap-2">
-                     <a 
-                      href={cert.link} 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="p-2.5 bg-slate-900/80 text-slate-400 hover:text-white hover:bg-white/10 rounded-full transition-all border border-slate-700/50 shadow-xl"
-                      aria-label="View verified certificate"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                  </div>
+                  <a 
+                    href={cert.link} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="p-3 bg-white/5 backdrop-blur-md text-white hover:bg-white hover:text-black rounded-full transition-all border border-white/10 shadow-xl"
+                  >
+                    <ExternalLink size={20} />
+                  </a>
                 </div>
                 
-                {/* Text Content - FIXED CONTRAST & TYPOGRAPHY */}
-                <div className="space-y-3 mt-10">
-                   <div className="flex items-center gap-2 text-xs md:text-sm font-bold tracking-widest text-cyan-300 uppercase">
-                      <Eye size={16} />
-                      <span>Certificate Preview</span>
-                   </div>
-                  <h3 className="text-xl md:text-2xl font-black text-white leading-tight group-hover:text-cyan-200 transition-colors">
-                    {cert.title}
-                  </h3>
-                  <p className="text-slate-100 font-semibold md:text-lg">{cert.issuer}</p>
-                </div>
-                
-                {/* Verified Badge & Date - FIXED Z-INDEX */}
-                <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
-                  <div className="flex flex-col">
-                    <span className="text-[10px] uppercase tracking-tighter text-slate-400">Issued Date</span>
-                    <span className="text-sm font-mono text-slate-100">{cert.date}</span>
+                <div className="mt-auto space-y-4">
+                  <div className="flex items-center gap-2 text-[10px] font-black tracking-[0.2em] text-cyan-400 uppercase">
+                    <Verified size={14} />
+                    <span>Industry Verified</span>
                   </div>
-                   <div className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-lg">
-                    <span className="text-[10px] uppercase tracking-widest text-cyan-300 font-black">
-                      Verified
-                    </span>
+                  
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-bold text-white leading-tight">
+                      {cert.title}
+                    </h3>
+                    <p className="text-slate-400 font-semibold">{cert.issuer}</p>
+                  </div>
+                  
+                  {/* Footer Action Area */}
+                  <div className="pt-6 border-t border-white/5 flex items-center justify-between">
+                    <div className="flex flex-col">
+                      <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1">Conferred</span>
+                      <div className="flex items-center gap-2 text-slate-200 font-mono text-sm">
+                        <Calendar size={12} className="text-slate-500" />
+                        {cert.date}
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-1 text-[10px] font-bold text-slate-300 bg-slate-800/50 px-3 py-1.5 rounded-full border border-slate-700/50">
+                      ID: LIC-REDEV
+                    </div>
                   </div>
                 </div>
               </div>

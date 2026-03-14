@@ -1,95 +1,126 @@
 import React from "react";
-import { ChevronDown, Github, Linkedin, Sparkles } from "lucide-react";
+import { ChevronRight, Github, Linkedin, Sparkles, Terminal } from "lucide-react";
 
 const Home = () => {
   return (
     <>
       <section
         id="home"
-        // Pinalitan ang h-screen ng min-h-screen at nilagyan ng padding-top para sa navbar
-        className="relative min-h-[100svh] w-full flex items-center justify-center overflow-hidden bg-[#0F172A] pt-20 pb-10"
+        className="relative min-h-[100svh] w-full flex items-center justify-center overflow-hidden bg-[#020617] pt-20 pb-10"
       >
-        {/* Background Gradients */}
-        <div className="absolute top-[-5%] left-[-5%] w-[60%] h-[40%] bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-[-5%] right-[-5%] w-[60%] h-[40%] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
+        {/* Advanced Background Orbs */}
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+        
+        {/* Subtle Grid Overlay */}
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay"></div>
 
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
           
-          {/* Left Content */}
-          <div className="space-y-6 md:space-y-8 text-center md:text-left order-2 md:order-1">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs md:text-sm font-medium mx-auto md:mx-0">
-              <Sparkles size={14} />
-              <span>Available for Freelance Projects</span>
+          {/* Left Content: 7-columns for prominence */}
+          <div className="lg:col-span-7 space-y-8 text-center lg:text-left order-2 lg:order-1">
+            <div className="inline-flex items-center space-x-3 px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-full text-cyan-400 text-xs md:text-sm font-semibold tracking-wide shadow-xl mx-auto lg:mx-0">
+              <Sparkles size={14} className="animate-spin-slow" />
+              <span className="uppercase tracking-[0.1em]">Available for Strategic Partnerships</span>
             </div>
 
-            <div className="space-y-4">
-              {/* FLUID TYPOGRAPHY: Ginamit ang clamp() para hindi sumabog ang laki */}
-              <h1 className="text-[clamp(2rem,5vw,4.5rem)] font-bold text-white leading-[1.1] tracking-tight">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-slate-200 to-slate-500">
-                  Elevating Brands Through Thoughtful Digital Solutions.
+            <div className="space-y-6">
+              <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold text-white leading-[1.05] tracking-tight">
+                Crafting the future of 
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400">
+                  Digital Excellence.
                 </span>
               </h1>
 
-              <p className="text-sm md:text-base lg:text-lg text-slate-400 max-w-lg leading-relaxed mx-auto md:mx-0">
-                Crafting digital work that’s strategic, beautiful, and functional.
+              <p className="text-base md:text-lg lg:text-xl text-slate-400 max-w-2xl leading-relaxed mx-auto lg:mx-0 font-medium">
+                High-performance development meets strategic design. I build digital solutions that prioritize clarity, scalability, and impact.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 pt-4">
               <a href="#works" className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3.5 bg-cyan-500 hover:bg-cyan-400 text-[#0F172A] font-bold rounded-xl transition-all active:scale-95 shadow-lg shadow-cyan-500/20">
-                  <span>View My Work</span>
-                  <ChevronDown size={18} />
+                <button className="group w-full sm:w-auto flex items-center justify-center space-x-3 px-8 py-4 bg-white hover:bg-cyan-500 text-black hover:text-white font-bold rounded-2xl transition-all duration-300 active:scale-95 shadow-2xl shadow-white/5">
+                  <span>View Portfolio</span>
+                  <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </a>
 
-              <div className="flex items-center space-x-6 text-slate-400">
-                <a href="#" className="hover:text-cyan-400 transition-colors">
-                  <Github size={22} />
+              <div className="flex items-center space-x-8 text-slate-500 border-l border-slate-800 pl-0 sm:pl-8">
+                <a href="https://github.com/rollyocta" target="_blank" className="hover:text-white transition-colors p-2 hover:bg-slate-900 rounded-lg">
+                  <Github size={24} />
                 </a>
-                <a href="#" className="hover:text-cyan-400 transition-colors">
-                  <Linkedin size={22} />
+                <a href="https://www.linkedin.com/in/rolly-octa/" target="_blank" className="hover:text-white transition-colors p-2 hover:bg-slate-900 rounded-lg">
+                  <Linkedin size={24} />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Right Code Card */}
-          <div className="order-1 md:order-2 w-full max-w-[480px] mx-auto md:max-w-none">
-            <div className="bg-[#1E293B]/80 backdrop-blur-md border border-slate-700/50 rounded-2xl p-4 md:p-6 shadow-2xl relative overflow-hidden group">
-              {/* Window Controls */}
-              <div className="flex space-x-1.5 mb-4">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500/60"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500/60"></div>
-              </div>
+          {/* Right Content: 5-columns for the Code Card */}
+          <div className="lg:col-span-5 order-1 lg:order-2 w-full">
+            <div className="relative group">
+              {/* Outer Glow Effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-1000"></div>
+              
+              <div className="relative bg-[#0F172A]/80 backdrop-blur-2xl border border-slate-800/50 rounded-[2rem] p-6 md:p-8 shadow-3xl overflow-hidden">
+                {/* Header of Code Card */}
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex space-x-2">
+                    <div className="w-3 h-3 rounded-full bg-slate-700"></div>
+                    <div className="w-3 h-3 rounded-full bg-slate-700"></div>
+                    <div className="w-3 h-3 rounded-full bg-slate-700"></div>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-500 font-mono text-xs">
+                    <Terminal size={14} />
+                    <span>developer.ts</span>
+                  </div>
+                </div>
 
-              {/* Code Content - Fluid text size */}
-              <div className="font-mono text-[10px] sm:text-xs lg:text-sm space-y-1.5 md:space-y-2 leading-relaxed">
-                <div className="text-cyan-400">
-                  <span className="text-blue-400">const</span> developer{" "}
-                  <span className="text-slate-100">=</span>{" "}
-                  <span className="text-slate-100">{`{`}</span>
+                {/* Code Content */}
+                <div className="font-mono text-xs sm:text-sm lg:text-[15px] space-y-3 leading-relaxed">
+                  <div>
+                    <span className="text-pink-500 italic">interface</span>{" "}
+                    <span className="text-cyan-400">Developer</span>{" "}
+                    <span className="text-slate-300">{`{`}</span>
+                  </div>
+                  <div className="pl-6">
+                    <span className="text-slate-400">name:</span>{" "}
+                    <span className="text-emerald-400">'Rolly Octa'</span>;
+                  </div>
+                  <div className="pl-6">
+                    <span className="text-slate-400">focus:</span>{" "}
+                    <span className="text-emerald-400">'Modern UX/UI'</span>;
+                  </div>
+                  <div className="pl-6">
+                    <span className="text-slate-400">stack:</span>{" "}
+                    <span className="text-blue-400">[</span>
+                    <span className="text-emerald-400">'Next.js'</span>,{" "}
+                    <span className="text-emerald-400">'Tailwind'</span>
+                    <span className="text-blue-400">]</span>;
+                  </div>
+                  <div className="pl-6">
+                    <span className="text-slate-400">vision:</span>{" "}
+                    <span className="text-emerald-400">'Impactful Tech'</span>;
+                  </div>
+                  <div className="text-slate-300">{`}`}</div>
+                  
+                  <div className="pt-4 flex items-center gap-2">
+                    <span className="text-blue-400">export default</span>{" "}
+                    <span className="text-cyan-400">RollyDev</span>;
+                  </div>
                 </div>
-                <div className="pl-4">
-                  <span className="text-purple-400">name</span>:{" "}
-                  <span className="text-emerald-400">"Rolly Octa"</span>,
-                </div>
-                <div className="pl-4">
-                  <span className="text-purple-400">skills</span>: [
-                </div>
-                <div className="pl-8 text-emerald-400">
-                  "React", "UI/UX", "Branding"
-                </div>
-                <div className="pl-4 text-slate-100">],</div>
-                <div className="pl-4 text-purple-400">
-                  passion: <span className="text-emerald-400">"User-focused innovation"</span>
-                </div>
-                <div className="text-slate-100">{`}`};</div>
+                
+                {/* Decorative Element */}
+                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl"></div>
               </div>
             </div>
           </div>
           
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30 animate-bounce">
+            <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-slate-400 to-transparent"></div>
         </div>
       </section>
     </>

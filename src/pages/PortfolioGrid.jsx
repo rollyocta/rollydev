@@ -1,44 +1,69 @@
-import React from 'react'
-import { useState } from 'react';
-import { ExternalLink } from 'lucide-react'
-
+import React, { useState } from 'react';
+import { ExternalLink, Github, Construction, Layers, Code2, Share2 } from 'lucide-react';
 
 const PortfolioGrid = () => {
+  const [activeTab, setActiveTab] = useState('all');
 
-    const [activeTab, setActiveTab] = useState('all');
-
-    const projects = [
+  const projects = [
     {
       id: 1,
-      title: "Landing Page Design for Bright Smile Dental Clinic",
+      title: "Parachute Consulting",
+      subtitle: "Corporate Rebrand",
       category: "design",
-      image: "/projects/dentalClinic.png",
-      description: "Tools: Figma | Focused on clean layout, brand colors, and conversion",
-      link: "https://www.figma.com/proto/Oq9szHBaRLSrALAV0jMYUD/Smart-Menu-Ordering-system?node-id=4-8"
+      image: "/projects/pcs.png",
+      description: "Designed a landing page for Parachute Consulting, an Australia-based consulting firm. The goal was to create a high-level and professional design that reflects the company’s expertise and appeals to larger businesses.",
+      tags: ["Figma", "Strategy", "Web Design"],
+      link: "https://www.figma.com/proto/Oq9szHBaRLSrALAV0jMYUD/Design?node-id=267-64&t=N06RLgAcQ38C7Cft-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      github: "",
+      isProgress: false
     },
     {
       id: 2,
-      title: "Smart Menu: Ordering System",
+      title: "Smart Menu System",
+      subtitle: "E-commerce Solution",
       category: "dev",
       image: "/projects/smartMenu.png",
-      description: "A responsive web-based smart menu system designed to streamline ordering and improve customer experience.",
-      link: "#"
+      description: "Smart Menu is a digital menu solution for small businesses like restaurants, cafés, and food kiosks. It offers a clean, mobile-friendly way for customers to browse items, helping businesses showcase their products and streamline ordering.",
+      tags: ["React"],
+      link: "https://smartmenu-nu.vercel.app/",
+      github: "https://github.com/rollyocta/smartmenu",
+      isProgress: false
     },
     {
       id: 3,
-      title: "UI/UX: Travel App",
-      category: "design",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=800",
-      description: "Mobile application interface design para sa mga biyahero.",
-      link: "#"
+      title: "Executive Brand Kit",
+      subtitle: "Social Media Strategy",
+      category: "content",
+      image: "/projects/cpp.png", // Replace with your actual image path
+      description: "Developed strategic LinkedIn content for Parachute Consulting, including company positioning, expertise, problem–solution, services overview, announcements, operational insights, and hero visuals. The posts were designed to strengthen the brand’s authority and engage a professional audience.",
+      tags: ["Content Strategy", "Graphic Design", "Copywriting"],
+      link: "https://drive.google.com/drive/folders/1pLDSX_SceFSr7wgnLW5O7wFEjNL5Jnnb?usp=sharing",
+      github: "",
+      isProgress: false
     },
     {
       id: 4,
-      title: "Dashboard System",
+      title: "MoniDash: Finance Tracker",
+      subtitle: "Full-stack SaaS",
       category: "dev",
-      image: "https://images.unsplash.com/photo-1551288049-bbbda546697c?auto=format&fit=crop&q=80&w=800",
-      description: "Interactive data visualization dashboard.",
-      link: "#"
+      image: "/projects/monidash.png",
+      description: "MoniDash is a personal finance dashboard that helps users track income and expenses in one place. With an intuitive interface and clear visualizations, it enables users to monitor spending patterns, plan budgets, and make informed financial decisions.",
+      tags: ["Laravel"],
+      link: "#",
+      github: "https://github.com/rollyocta/monidash",
+      isProgress: true 
+    },
+    {
+      id: 5,
+      title: "Bright Smile Dental Clinic",
+      subtitle: "UI/UX Case Study",
+      category: "design",
+      image: "/projects/dentalClinic.png",
+      description: "A conversion-focused landing page designed to build brand trust and streamline appointment booking for a dental clinic. The layout emphasizes clarity, professional visuals, and easy navigation to enhance user experience and patient engagement",
+      tags: ["Figma", "UI Design", "Branding"],
+      link: "https://www.figma.com/proto/Oq9szHBaRLSrALAV0jMYUD/Design?node-id=4-8",
+      github: "",
+      isProgress: false
     }
   ];
 
@@ -46,58 +71,151 @@ const PortfolioGrid = () => {
     ? projects 
     : projects.filter(p => p.category === activeTab);
 
+  // Helper function for category icons
+  const getCategoryIcon = (category) => {
+    switch (category) {
+      case 'design': return <Layers size={12}/>;
+      case 'dev': return <Code2 size={12}/>;
+      case 'content': return <Share2 size={12}/>;
+      default: return null;
+    }
+  };
+
   return (
-    <>
-      {/* Portfolio Grid */}
-      <section id="works" className="py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div>
-              <h2 className="text-4xl font-bold text-white mb-4">Mga Obra</h2>
-              <p className="text-slate-400">Piliin ang kategorya para makita ang aking trabaho.</p>
+    <section id="works" className="py-24 px-6 bg-[#020617] text-slate-200">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium tracking-widest uppercase">
+              Project Showcase
             </div>
-            <div className="flex p-1 bg-[#1E293B] rounded-lg border border-slate-700">
-              {['all', 'design', 'dev'].map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-2 rounded-md capitalize transition-all ${activeTab === tab ? 'bg-cyan-500 text-[#0F172A] font-bold shadow-lg' : 'text-slate-400 hover:text-white'}`}
-                >
-                  {tab === 'all' ? 'Lahat' : tab === 'design' ? 'Disenyo' : 'Development'}
-                </button>
-              ))}
-            </div>
+            <h2 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight">
+              Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Works</span>
+            </h2>
+            <p className="text-slate-400 max-w-md text-lg leading-relaxed">
+              A curated collection of digital experiences, architectural designs, and strategic content solutions.
+            </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
-            {filteredProjects.map((project) => (
-              <div key={project.id} className="group relative overflow-hidden rounded-3xl bg-[#1E293B] border border-slate-700 transition-all hover:-translate-y-2">
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
-                  />
-                </div>
-                <div className="p-8 flex justify-between items-center">
-                  <div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2 block">
-                      {project.category === 'design' ? 'Graphic Art' : 'Web Dev'}
-                    </span>
-                    <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                    <p className="text-slate-400 text-sm mt-2">{project.description}</p>
-                  </div>
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white group-hover:bg-cyan-500 group-hover:text-[#0F172A] transition-colors">
-                    <ExternalLink size={20} />
-                  </a>
-                </div>
-              </div>
+          {/* Premium Tab Switcher */}
+          <div className="flex p-1.5 bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 shadow-2xl">
+            {[
+              { id: 'all', label: 'All Projects' },
+              { id: 'design', label: 'Design' },
+              { id: 'dev', label: 'Development' },
+              { id: 'content', label: 'Content' }
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`relative px-6 py-2.5 rounded-xl transition-all duration-300 text-sm font-semibold tracking-wide ${
+                  activeTab === tab.id 
+                  ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/20' 
+                  : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {tab.label}
+              </button>
             ))}
           </div>
         </div>
-      </section>
-    </>
-  )
-}
 
-export default PortfolioGrid
+        {/* High Professional Grid */}
+        <div className="grid md:grid-cols-2 gap-10">
+          {filteredProjects.map((project) => (
+            <div 
+              key={project.id} 
+              className="group relative flex flex-col bg-slate-900/40 border border-slate-800/50 rounded-[2.5rem] overflow-hidden transition-all duration-500 hover:border-cyan-500/40 hover:shadow-[0_20px_50px_rgba(8,112,184,0.1)]"
+            >
+              {/* Image Layer */}
+              <div className="relative aspect-[16/10] overflow-hidden bg-slate-800">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
+                />
+                
+                {/* Floating Badges */}
+                <div className="absolute top-6 left-6 flex flex-wrap gap-2">
+                  <span className="flex items-center gap-1.5 bg-black/60 backdrop-blur-xl px-4 py-1.5 rounded-full border border-white/10 text-[10px] font-bold uppercase tracking-[0.15em] text-white">
+                    {getCategoryIcon(project.category)}
+                    {project.category === 'design' ? 'Design' : project.category === 'dev' ? 'Engineering' : 'Content'}
+                  </span>
+                  {project.isProgress && (
+                    <span className="flex items-center gap-1.5 bg-amber-500/20 backdrop-blur-xl px-4 py-1.5 rounded-full border border-amber-500/30 text-[10px] font-bold uppercase tracking-[0.15em] text-amber-500">
+                      <Construction size={12} /> In Progress
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Content Layer */}
+              <div className="p-10 flex flex-col flex-grow">
+                <div className="flex-grow space-y-4">
+                  <div>
+                    <p className="text-cyan-500 text-xs font-bold uppercase tracking-widest mb-1">{project.subtitle}</p>
+                    <h3 className="text-3xl font-bold text-white group-hover:text-cyan-400 transition-colors tracking-tight">
+                      {project.title}
+                    </h3>
+                  </div>
+
+                  <p>Project Overview</p>
+                  
+                  <p className="text-slate-400 leading-relaxed font-medium text-justify">
+                    {project.description}
+                  </p>
+
+                  {/* Tech Tags */}
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="text-[11px] font-semibold px-3 py-1 rounded-md bg-slate-800/50 border border-slate-700/50 text-slate-400">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Modern Footer Actions */}
+                <div className="mt-10 pt-8 border-t border-slate-800/60 flex items-center justify-between">
+                  <div className="flex gap-4">
+                    {project.github && (
+                      <a 
+                        href={project.github} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/icon p-3 rounded-2xl bg-slate-800/50 text-slate-400 hover:bg-white hover:text-black transition-all duration-300"
+                        title="Source Code"
+                      >
+                        <Github size={22} />
+                      </a>
+                    )}
+                  </div>
+
+                  {project.isProgress ? (
+                    <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-800/30 text-slate-500 border border-slate-700/50 font-bold italic text-sm">
+                      Under Construction
+                    </div>
+                  ) : (
+                    <a 
+                      href={project.link} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/btn flex items-center gap-3 px-8 py-3 rounded-2xl bg-white text-black font-bold hover:bg-cyan-500 hover:text-white transition-all duration-300 shadow-xl"
+                    >
+                      <span className="text-sm font-bold tracking-tight">Explore Project</span>
+                      <ExternalLink size={18} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PortfolioGrid;
