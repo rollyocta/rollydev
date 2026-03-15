@@ -96,8 +96,7 @@ const About = () => {
                 <div className="space-y-8">
                   {[
                     { date: '2025 - Present', role: 'Web Developer', co: 'Freelance', active: true },
-                    { date: '2024 - 2025', role: 'Business Planner', co: 'SMIILS Inc.', active: false },
-                    { date: '2023 - 2024', role: 'IT Staff', co: 'Macro Wiring Tech', active: false }
+                    { date: '2023 - 2024', role: 'IT Staff', co: 'Macro Wiring Technologies Co. Inc.', active: false }
                   ].map((job, i) => (
                     <div key={i} className="relative pl-8 group">
                       <div className={`absolute left-0 top-1 w-[2px] h-full ${job.active ? 'bg-cyan-500' : 'bg-slate-800'}`} />

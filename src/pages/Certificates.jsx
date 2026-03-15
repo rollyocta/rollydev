@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Cloud, Palette, ShieldCheck, Award, Eye, Calendar, Verified } from 'lucide-react';
+import { ExternalLink, Cloud, Braces, Code,  Award, Calendar, Verified } from 'lucide-react';
 
 const Certificates = () => {
   const certs = [
@@ -13,22 +13,22 @@ const Certificates = () => {
       icon: <Cloud className="text-cyan-400" size={24} />
     },
     {
-      title: "Advanced Graphic Design",
-      issuer: "Udemy",
-      date: "2023",
-      link: "#",
-      image: "/certs/udemy_design.jpg", 
+      title: "Laravel Advanced Topics",
+      issuer: "Alison",
+      date: "2025",
+      link: "https://alison.com/verify/e1302d08c5",
+      image: "/certificates/laravel.png", 
       accent: "from-purple-500/20 to-indigo-500/20",
-      icon: <Palette className="text-purple-400" size={24} />
+      icon: <Code className="text-purple-400" size={24} />
     },
     {
-      title: "UI/UX Design Mastery",
-      issuer: "Google",
-      date: "2023",
-      link: "#",
-      image: "/certs/google_ux.jpg", 
+      title: "React JavaScript - Fundamentals to Coding ",
+      issuer: "Alison",
+      date: "2025",
+      link: "https://alison.com/certification/check/b42e1f4bb8",
+      image: "/certificates/react.png", 
       accent: "from-emerald-500/20 to-teal-500/20",
-      icon: <ShieldCheck className="text-emerald-400" size={24} />
+      icon: <Braces className="text-emerald-400" size={24} />
     }
   ];
 

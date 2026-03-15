@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronRight, Github, Linkedin, Sparkles, Terminal } from "lucide-react";
+import { ChevronRight, Github, Linkedin, Sparkles, Terminal, Facebook } from "lucide-react";
 
 const Home = () => {
   return (
@@ -32,7 +32,7 @@ const Home = () => {
                 </span>
               </h1>
 
-              <p className="text-base md:text-lg lg:text-xl text-slate-400 max-w-2xl leading-relaxed mx-auto lg:mx-0 font-medium">
+              <p className="text-base md:text-lg lg:text-xl text-slate-400 max-w-2xl leading-relaxed mx-auto lg:mx-0 font-medium text-justify">
                 High-performance development meets strategic design. I build digital solutions that prioritize clarity, scalability, and impact.
               </p>
             </div>
@@ -51,6 +51,9 @@ const Home = () => {
                 </a>
                 <a href="https://www.linkedin.com/in/rolly-octa/" target="_blank" className="hover:text-white transition-colors p-2 hover:bg-slate-900 rounded-lg">
                   <Linkedin size={24} />
+                </a>
+                <a href="https://www.facebook.com/rolly.octa.98/" target="_blank" className="hover:text-white transition-colors p-2 hover:bg-slate-900 rounded-lg">
+                  <Facebook size={24} />
                 </a>
               </div>
             </div>
