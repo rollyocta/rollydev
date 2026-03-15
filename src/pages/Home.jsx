@@ -98,7 +98,7 @@ const Home = () => {
                     <span className="text-slate-400">stack:</span>{" "}
                     <span className="text-blue-400">[</span>
                     <span className="text-emerald-400">'Next.js'</span>,{" "}
-                    <span className="text-emerald-400">'Tailwind'</span>
+                    <span className="text-emerald-400">'Laravel'</span>
                     <span className="text-blue-400">]</span>;
                   </div>
                   <div className="pl-6">
