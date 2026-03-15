@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin, ArrowRight, Copy, CheckCircle2 } from 'lucide-r
 
 const Contact = () => {
   const [copied, setCopied] = useState(false);
-  const email = "rolly@rollydev.com"; // Replace with your actual email
+  const email = "rollyocta05@gmail.com"; // Replace with your actual email
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(email);
