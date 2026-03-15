@@ -61,11 +61,11 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className="pt-8 flex items-center gap-10 border-t border-slate-800/60 w-full max-w-md justify-center">
-              <a href="#" className="group flex items-center gap-2 text-slate-500 hover:text-white transition-colors">
+              <a href="https://github.com/rollyocta" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 text-slate-500 hover:text-white transition-colors">
                 <Github size={24} />
                 <span className="text-sm font-bold">GitHub</span>
               </a>
-              <a href="#" className="group flex items-center gap-2 text-slate-500 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/in/rolly-octa/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 text-slate-500 hover:text-white transition-colors">
                 <Linkedin size={24} />
                 <span className="text-sm font-bold">LinkedIn</span>
               </a>
