@@ -95,7 +95,7 @@ const About = () => {
                 </h3>
                 <div className="space-y-8">
                   {[
-                    { date: 'Feb 2026 - Mar 2026', role: 'Freelance Web & Brand Designer ', co: 'Parachute Consulting Services', active: true },
+                    { date: 'Feb 2026 - Mar 2026', role: 'Freelance Brand Designer ', co: 'Parachute Consulting Services', active: true },
                     { date: 'Apr 2024 - Dec 2025', role: 'Professional Development & Freelance Experience', active: false },
                     { date: 'Oct 2023 - Feb 2024', role: 'IT Staff', co: 'Macro Wiring Technologies Co. Inc.', active: false }
                   ].map((job, i) => (
