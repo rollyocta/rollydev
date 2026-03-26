@@ -31,10 +31,10 @@ const About = () => {
               <h2 className="text-4xl font-bold text-white tracking-tight">Professional Bio</h2>
               <div className="space-y-4 text-slate-400 leading-relaxed text-lg text-justify">
                 <p>
-                  I am a creative professional based in the Philippines with 2 years of experience in web development and visual design. I specialize in building clean, user-focused websites and systems that help businesses improve efficiency.
+                  I am a creative professional based in the Philippines with hands on experience in social media branding and web development. I have built projects using the MERN stack, giving me a strong foundation in developing modern, user-focused web applications.
                 </p>
                 <p>
-                  My approach combines functional design with a focus on usability, ensuring that every system and website I build not only looks polished but also delivers tangible value.
+                  My approach combines functional design with usability, ensuring that the systems and digital assets I create are both visually polished and practical. I am continuously improving my skills by building real-world projects that demonstrate my ability to deliver efficient and scalable solutions.
                 </p>
               </div>
             </div>
