@@ -77,7 +77,7 @@ const About = () => {
                   <Code2 size={18} className="text-blue-500" /> Technical Stack
                 </h3>
                 <div className="flex flex-wrap gap-3">
-                  {['React', 'Next.js', 'Node.js', 'Laravel', 'MySQL', 'TypeScript', 'Sanity'].map(skill => (
+                  {['MongoDB', 'Express.js', 'React / Next.js', 'Node.js', 'JavaScript (ES6+)', 'TypeScript', 'Git / GitHub', 'Sanity'].map(skill => (
                     <span key={skill} className="px-5 py-2 bg-slate-800/50 hover:bg-blue-500 hover:text-white border border-slate-700 text-slate-300 rounded-xl text-sm font-semibold transition-all cursor-default">
                       {skill}
                     </span>

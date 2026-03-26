@@ -27,7 +27,7 @@ const Skills = () => {
                 <Code2 className="text-blue-500" /> Web Dev Skills
               </h2>
               <div className="grid grid-cols-2 gap-4">
-                {['React / Next.js', 'Tailwind CSS', 'JavaScript (ES6+)', 'Node.js', 'Git / GitHub', 'Firebase'].map((skill) => (
+                {['MongoDB', 'Express.js', 'React / Next.js', 'Node.js', 'Tailwind CSS', 'JavaScript (ES6+)', 'Git / GitHub'].map((skill) => (
                   <div key={skill} className="flex items-center space-x-3 bg-[#1E293B] p-4 rounded-xl border border-slate-700/50">
                     <div className="w-2 h-2 rounded-full bg-blue-500" />
                     <span>{skill}</span>

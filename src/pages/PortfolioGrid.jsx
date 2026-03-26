@@ -44,14 +44,14 @@ const PortfolioGrid = () => {
     {
       id: 4,
       title: "MoniDash: Finance Tracker",
-      subtitle: "Full-stack SaaS",
+      subtitle: "Full-stack Web App",
       category: "dev",
       image: "/projects/monidash.png",
       description: "MoniDash is a personal finance dashboard that helps users track income and expenses in one place. With an intuitive interface and clear visualizations, it enables users to monitor spending patterns, plan budgets, and make informed financial decisions.",
-      tags: ["Laravel"],
-      link: "#",
-      github: "https://github.com/rollyocta/monidash",
-      isProgress: true 
+      tags: ["MongoDB", "Express.js", "React", "Node.js"],
+      link: "https://monidashv1.vercel.app/",
+      github: "https://github.com/rollyocta/monidashv1",
+      isProgress: false 
     },
     {
       id: 5,
